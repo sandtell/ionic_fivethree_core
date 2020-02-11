@@ -6,9 +6,45 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content class="ion-padding"> 
+  <ion-button #feature="fivFeature" [fivFeature]="content">
+    Click Me
+  </ion-button>
+
+
+  <ion-button (click)="feature.show()">
+    Open Feature
+  </ion-button>
+  
+  <ng-template #content>
+    <div padding>
+      <ion-text color="light">
+        <h1>Take the Tour</h1>
+        <p>You can also build a little feature tour.</p>
+      </ion-text>
+    </div>
+  </ng-template>
+
+  <br>
+
+  <ion-button routerLink="/refresh" routerDirection="forward" >
+    Refresh
+  </ion-button>
+
+  <ion-button routerLink="/fab" routerDirection="forward" >
+    Fab
+  </ion-button>
+  
+  <!-- <fiv-loading-content spinColor="dark" #content>
+    <ion-button (click)="content.showHint()">
+      Show hint
+    </ion-button>
+    <ion-button (click)="content.refresh()">
+      Refresh
+    </ion-button>
+    <ion-button (click)="content.completeRefresh()">
+      complete
+    </ion-button>
+  </fiv-loading-content> -->
+
 </ion-content>
